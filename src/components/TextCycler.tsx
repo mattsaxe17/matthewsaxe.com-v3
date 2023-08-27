@@ -6,7 +6,7 @@ type TextCyclerProps = {
     iterations: Array<string>;
 };
 
-export default function Hero({ iterations }: TextCyclerProps) {
+export default function TextCycler({ iterations }: TextCyclerProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [animationClass, setAnimationClass] = useState('');
 
