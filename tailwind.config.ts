@@ -7,6 +7,7 @@ const config: Config = {
             primary: '#ed6d3c',
             'primary-text': 'white',
             'secondary-text': '#8b8b8b',
+            'primary-bg': '#252422'
         },
         extend: {
             keyframes: {
