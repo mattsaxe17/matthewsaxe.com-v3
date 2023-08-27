@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import TextCycler from '@/components/TextCycler';
 
 type HeroProps = {
     intro: string;
@@ -19,8 +20,11 @@ export default function Hero({ intro, name, constant, characteristics, descripti
             <div className='flex flex-col justify-center align-start p-5'>
                 <p className='text-primary font-bold text-xl'>{intro}</p>
                 <p className='text-primary-text font-bold text-4xl mb-1'>{name}.</p>
-                <p className='text-secondary-text font-bold text-3xl mb-5'>
-                    {constant} {characteristics[0]}
+                <p className='text-secondary-text font-bold text-3xl mb-5 flex'>
+                    <span>{constant}</span>&nbsp;
+                    <span>
+                        <TextCycler iterations={characteristics}></TextCycler>
+                    </span>
                 </p>
                 <p className='text-secondary-text text-sm mb-10'>{description}</p>
                 <div>
