@@ -10,14 +10,15 @@ export default function TextCycler({ iterations }: TextCyclerProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [animationClass, setAnimationClass] = useState('');
 
-    setInterval(() => {
-        setCurrentIndex(currentIndex === iterations.length - 1 ? 0 : currentIndex + 1);
-    }, 3500);
-
     useEffect(() => {
         // This just ensures that the rotation stays in sync with the changing text (Kind of hacky \:)
+        setAnimationClass('');
         setAnimationClass(`animate-[rotateDown_ease-in-out_3500ms_infinite]`);
-    }, [currentIndex]);
+
+        setTimeout(() => {
+          setCurrentIndex(currentIndex === iterations.length - 1 ? 0 : currentIndex + 1);
+      }, 3500)
+    }, [currentIndex, iterations.length]);
 
     return (
         <div id='outer'>
