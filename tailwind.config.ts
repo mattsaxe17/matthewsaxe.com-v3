@@ -9,9 +9,23 @@ const config: Config = {
             'secondary-text': '#8b8b8b',
         },
         extend: {
-            backgroundImage: {
-                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+            keyframes: {
+                rotateDown: {
+                    '0%': {
+                        transform: 'translateZ(-1em) rotateX(90deg)',
+                    },
+                    '10%': {
+                        transform: 'rotateX(0deg)',
+                        'padding-right': '0',
+                    },
+                    '90%': {
+                        transform: 'rotateX(0deg)',
+                        'padding-right': '0',
+                    },
+                    '100%': {
+                        transform: 'translateZ(-1em) rotateX(-90deg)',
+                    },
+                },
             },
         },
     },
