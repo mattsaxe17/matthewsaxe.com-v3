@@ -16,7 +16,7 @@ export default function Hero({ iterations }: TextCyclerProps) {
     return (
         <div id='outer'>
             {/* Kind of hacky \: */}
-            <div id='inner' className='animate-[rotateDown_ease-in-out_3500ms_infinite]'>
+            <div id='inner' className='animate-[rotateDown_ease-in-out_3500ms_infinite] whitespace-nowrap'>
                 {iterations[currentIndex]}
             </div>
         </div>
