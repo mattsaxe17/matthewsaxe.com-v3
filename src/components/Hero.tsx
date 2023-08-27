@@ -16,7 +16,7 @@ type HeroProps = {
 
 export default function Hero({ intro, name, constant, characteristics, description, cta }: HeroProps) {
     return (
-        <div id='hero' className='w-screen h-screen flex justify-center align-center px-10 border-b-2 border-b-primary'>
+        <div id='hero' className='w-screen h-screen flex justify-center align-center px-10'>
             <div className='flex max-w-7xl'>
                 <div className='flex flex-col justify-center align-start p-5 max-w-xl xl:max-w-2xl'>
                     <p className='text-primary font-bold text-xl'>{intro}</p>
