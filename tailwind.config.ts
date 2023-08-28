@@ -1,13 +1,19 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+    darkMode: 'class',
     content: ['./src/pages/**/*.{js,ts,jsx,tsx,mdx}', './src/components/**/*.{js,ts,jsx,tsx,mdx}', './src/app/**/*.{js,ts,jsx,tsx,mdx}'],
     theme: {
         colors: {
-            primary: '#ed6d3c',
-            'primary-text': 'white',
-            'secondary-text': '#8b8b8b',
-            'primary-bg': '#252422'
+            'primary': '#ed6d3c',
+            'dark-primary-text': '#e5e7eb',
+            'dark-secondary-text': '#8b8b8b',
+            'dark-faint-text': '#000',
+            'dark-primary-bg': '#252422',
+
+            'primary-text': '#0a0a0a',
+            'secondary-text': '#525252',
+            'primary-bg': '#e5e5e5',
         },
         extend: {
             keyframes: {
