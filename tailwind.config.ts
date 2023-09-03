@@ -5,7 +5,7 @@ const config: Config = {
     content: ['./src/pages/**/*.{js,ts,jsx,tsx,mdx}', './src/components/**/*.{js,ts,jsx,tsx,mdx}', './src/app/**/*.{js,ts,jsx,tsx,mdx}'],
     theme: {
         colors: {
-            'primary': '#ed6d3c',
+            primary: '#ed6d3c',
             'dark-primary-text': '#e5e7eb',
             'dark-secondary-text': '#8b8b8b',
             'dark-faint-text': '#000',
