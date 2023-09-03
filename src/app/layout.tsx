@@ -2,6 +2,9 @@ import AppBar from '@/components/AppBar';
 import './globals.css';
 import type { Metadata } from 'next';
 import Providers from '@/components/Providers';
+import SocialBar from '@/components/SocialBar';
+import { MdEmail } from 'react-icons/md';
+import { BsGithub, BsInstagram, BsLinkedin, BsSpotify, BsTwitter } from 'react-icons/bs';
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -17,6 +20,15 @@ const navItems = [
     { label: 'Contact', url: '/#contact' },
 ];
 
+const socials = [
+    { link: 'https://open.spotify.com/show/354VSGqhb5Q1KHtNLm03Ub?si=9f83d5bc9d4049b0', icon: <BsSpotify /> },
+    { link: 'https://github.com/mattsaxe17', icon: <BsGithub /> },
+    { link: 'https://www.linkedin.com/in/mattsaxe17/', icon: <BsLinkedin /> },
+    { link: 'https://www.instagram.com/matthew_saxe/', icon: <BsInstagram /> },
+    { link: 'https://twitter.com/mattsaxe17', icon: <BsTwitter /> },
+    { link: 'mailto:matt@matthewsaxe.com', icon: <MdEmail /> },
+];
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang='en' className='dark'>
@@ -24,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Providers>
                     <AppBar navItems={navItems}></AppBar>
                     {children}
+                    <SocialBar desktopOnly fixed location='right' socials={socials} />
                 </Providers>
             </body>
         </html>
