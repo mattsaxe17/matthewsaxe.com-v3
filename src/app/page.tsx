@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import SectionHeader from '@/components/SectionHeader';
 import Watermark from '@/components/Watermark';
 
 export default function Home() {
@@ -16,6 +17,8 @@ export default function Home() {
                     label: 'Reach out',
                 }}
             ></Hero>
+
+            <SectionHeader prefix='00.' title='About Me'></SectionHeader>
         </>
     );
 }
