@@ -4,8 +4,9 @@ import { Switch } from '@mui/material';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { BsMoonStars, BsSun } from 'react-icons/bs';
+import tailwindConfig from '../../tailwind.config';
 
-export default function AppBar() {
+export default function ThemeToggler() {
     const { theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
@@ -19,7 +20,18 @@ export default function AppBar() {
 
     return (
         <div className='flex items-center text-xl'>
-            <Switch defaultChecked value={theme === 'light'} onChange={() => setTheme(theme === 'dark' ? 'light' : 'dark')} color='default' />
+            <Switch
+                defaultChecked
+                value={theme === 'light'}
+                onChange={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                color='default'
+                // Super hacky but it works \:
+                sx={{
+                    '.Mui-checked + .MuiSwitch-track': {
+                        backgroundColor: (tailwindConfig?.theme?.colors as any)['primary'],
+                    },
+                }}
+            />
             {theme === 'dark' ? <BsMoonStars /> : <BsSun />}
         </div>
     );
