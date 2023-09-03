@@ -18,7 +18,7 @@ export default function Home() {
                 }}
             ></Hero>
 
-            <SectionHeader prefix='00.' title='About Me'></SectionHeader>
+            <SectionHeader prefix='00.' title='About Me' anchor='about'></SectionHeader>
         </>
     );
 }

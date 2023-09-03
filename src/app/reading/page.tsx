@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Reading() {
     return (
         <>
-            <Watermark text='Reading'></Watermark>
+            <Watermark text='Reading List'></Watermark>
             <div className='w-screen h-screen flex justify-center items-center flex-col gap-5'>
                 <p>I&apos;m an empty page!</p>
                 <span className='text-6xl'><GiDiamondsSmile /></span>
