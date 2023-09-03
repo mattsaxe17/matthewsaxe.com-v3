@@ -1,5 +1,10 @@
 import Watermark from '@/components/Watermark';
+import { Metadata } from 'next';
 import { GiDiamondsSmile } from 'react-icons/gi';
+
+export const metadata: Metadata = {
+  title: 'Reading List | Matt Saxe',
+};
 
 export default function Reading() {
     return (

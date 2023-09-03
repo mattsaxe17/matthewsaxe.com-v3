@@ -1,5 +1,10 @@
 import Watermark from '@/components/Watermark';
+import { Metadata } from 'next';
 import { GiDiamondsSmile } from 'react-icons/gi';
+
+export const metadata: Metadata = {
+  title: 'The Matt Saxe Podcast',
+};
 
 export default function Podcast() {
     return (

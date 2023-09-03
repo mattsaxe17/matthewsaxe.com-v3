@@ -26,7 +26,7 @@ export default function AppBar({ navItems, socials }: AppBarProps) {
         override === undefined ? setNavDrawerOpen(!navDrawerOpen) : setNavDrawerOpen(override);
     };
 
-    // If no dependencies are provided, the callback will be executed after every render of the component.
+    // If no dependencies are provided, the callback will be executed upon render
     useEffect(() => {
         window.onscroll = () => {
             const currentScrollPos = window.scrollY;
