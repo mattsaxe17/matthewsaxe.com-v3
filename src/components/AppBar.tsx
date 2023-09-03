@@ -15,7 +15,7 @@ type AppBarProps = {
 };
 
 export default function AppBar({ navItems }: AppBarProps) {
-    const [scrollPos, setScrollPos] = useState(0);
+    const [scrollPos, setScrollPos] = useState(100);
     const [conditionalStyles, setConditionalStyles] = useState('');
 
     // If no dependencies are provided, the callback will be executed after every render of the component.
@@ -33,7 +33,7 @@ export default function AppBar({ navItems }: AppBarProps) {
                 styles.push('h-32');
             } else {
                 styles.push('bg-primary-bg dark:bg-dark-primary-bg');
-                styles.push('shadow-lg');
+                styles.push('shadow-2xl');
                 styles.push('py-8');
                 styles.push('h-24');
             }
@@ -44,7 +44,7 @@ export default function AppBar({ navItems }: AppBarProps) {
     });
 
     return (
-        <div className={`${conditionalStyles} fixed flex justify-between px-6 items-center w-full -delay-100 duration-500 transition-all`}>
+        <div className={`fixed flex justify-between px-6 py-8 items-center w-full -delay-100 duration-500 transition-all ${conditionalStyles}`}>
             <Link href='/'>
                 <Image src='/logo.svg' alt='My logo' width={40} height={50}></Image>
             </Link>
