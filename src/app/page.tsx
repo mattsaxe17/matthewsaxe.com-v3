@@ -10,7 +10,7 @@ export default function Home() {
                 intro="Hello I'm"
                 name='Matt Saxe'
                 constant='I'
-                characteristics={['build powerful software.', 'record impactful podcasts.', 'read interesting books.', 'practice martial arts.']}
+                characteristics={['build software.', 'record podcasts.', 'read books.', 'practice martial arts.']}
                 description="I'm a software engineer in Dallas, TX. Unfortunately, I am currently not building any software for clients. I've been working very hard on some other projects though, so feel free to check back here to see what I'm up to. Big things are coming."
                 cta={{
                     url: '',
