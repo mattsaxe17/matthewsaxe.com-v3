@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ThemeToggler from '@/components/ThemeToggler';
 import { useEffect, useState } from 'react';
+import NavDrawer from '@/components/NavDrawer';
 
 type NavItem = {
     label: string;
@@ -12,11 +13,18 @@ type NavItem = {
 
 type AppBarProps = {
     navItems: Array<NavItem>;
+    socials: Array<{ link: string; icon: JSX.Element }>;
 };
 
-export default function AppBar({ navItems }: AppBarProps) {
+export default function AppBar({ navItems, socials }: AppBarProps) {
     const [scrollPos, setScrollPos] = useState(100);
     const [conditionalStyles, setConditionalStyles] = useState('');
+    const [navDrawerOpen, setNavDrawerOpen] = useState(false);
+    const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+
+    const toggleNavDrawer = (override: boolean) => {
+        override === undefined ? setNavDrawerOpen(!navDrawerOpen) : setNavDrawerOpen(override);
+    };
 
     // If no dependencies are provided, the callback will be executed after every render of the component.
     useEffect(() => {
@@ -43,17 +51,28 @@ export default function AppBar({ navItems }: AppBarProps) {
         };
     });
 
+    useEffect(() => {
+        const handleresize = () => {
+            if (window.innerWidth > 768) toggleNavDrawer(false);
+        };
+
+        window.addEventListener('resize', handleresize);
+    });
+
     return (
         <div className={`fixed flex justify-between px-6 py-8 items-center w-full -delay-100 duration-500 transition-all ${conditionalStyles}`}>
             <Link href='/'>
                 <Image src='/logo.svg' alt='My logo' width={40} height={50}></Image>
             </Link>
-            <div className='md:hidden'>
-                <Image src='/menu.svg' alt='My logo' width={40} height={50}></Image>
+
+            <div className='md:hidden' onClick={() => setNavDrawerOpen(true)}>
+                <Image src='/menu.svg' alt='Menu svg' width={40} height={50}></Image>
+                <NavDrawer open={navDrawerOpen} navItems={navItems} socials={socials} toggleNavDrawer={toggleNavDrawer} />
             </div>
+
             <div className='hidden md:flex gap-4 items-center'>
                 {navItems.map((navItem: NavItem, ind: number) => (
-                    <Link href={navItem.url} key={navItem.label} className='text-primary-tex dark:text-dark-primary-text group'>
+                    <Link href={navItem.url} key={navItem.label} className='text-primary-text dark:text-dark-primary-text group'>
                         <div className='group-hover:animate-bounce group-hover:text-secondary-text ease-in-out transition transform'>
                             <span className='text-primary font-bold'>{`00${ind}`.slice(-2)}.&nbsp;</span>
                             <span className='font-thin'>{navItem.label}</span>

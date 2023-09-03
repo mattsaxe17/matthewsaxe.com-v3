@@ -32,9 +32,9 @@ const socials = [
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang='en' className='dark'>
-            <body className='bg-primary-bg dark:bg-dark-primary-bg'>
+            <body className='bg-primary-bg dark:bg-dark-primary-bg max-w-full overflow-x-hidden'>
                 <Providers>
-                    <AppBar navItems={navItems}></AppBar>
+                    <AppBar navItems={navItems} socials={socials}></AppBar>
                     {children}
                     <SocialBar desktopOnly fixed location='right' socials={socials} />
                 </Providers>

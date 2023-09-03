@@ -19,7 +19,7 @@ export default function ThemeToggler() {
     }
 
     return (
-        <div className='flex items-center text-xl'>
+        <div className='flex items-center text-xl text-primary-text dark:text-dark-primary-text'>
             <Switch
                 defaultChecked
                 value={theme === 'light'}
