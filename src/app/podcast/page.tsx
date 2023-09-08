@@ -3,7 +3,11 @@ import Watermark from '@/components/Watermark';
 import moment from 'moment';
 import { Metadata } from 'next';
 import Parser from 'rss-parser';
-import { BsGithub, BsInstagram, BsLinkedin, BsSpotify, BsTwitter } from 'react-icons/bs';
+import { BsSpotify } from 'react-icons/bs';
+import { SiGooglepodcasts } from 'react-icons/si';
+import { PiApplePodcastsLogoFill } from 'react-icons/pi';
+import { AiOutlineAmazon } from 'react-icons/ai';
+import PlatformIcon from '@/components/PlatformIcon';
 
 const parser = new Parser();
 
@@ -13,8 +17,15 @@ export const metadata: Metadata = {
 
 async function getFeed() {
     const feed = await parser.parseURL(process.env.NEXT_RSS_FEED_URL as string);
+    console.log(feed);
     return feed;
 }
+
+const availableOn: Array<{ name: string; icon: JSX.Element; link: string }> = [
+    { name: 'Amazon Music', icon: <AiOutlineAmazon />, link: 'https://music.amazon.com/podcasts/49048046-8c41-44b6-a7a0-efc081c958c1/the-matt-saxe-podcast' },
+    { name: 'Apple Podcasts', icon: <PiApplePodcastsLogoFill />, link: 'https://podcasts.apple.com/us/podcast/the-matt-saxe-podcast/id1696517517' },
+    { name: 'Google Podcasts', icon: <SiGooglepodcasts />, link: 'https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy9lMzdhYjJkMC9wb2RjYXN0L3Jzcw' },
+];
 
 export default async function Podcast() {
     const feed = await getFeed();
@@ -30,13 +41,19 @@ export default async function Podcast() {
                     <div className='flex flex-col justify-center items-center p-4 md:h-full md:justify-start md:items-start text-center md:text-left'>
                         <h1 className='text-4xl text-primary-text dark:text-dark-primary-text text-center pb-4 md:text-left mb-8 font-bold'>{feed.title}</h1>
                         <p className='mb-6'>By {feed.creator}</p>
-                        <p className='text-secondary-text text-sm mb-6'>{feed.description}</p>
-                        <button className='w-max flex items-center gap-2 p-2 border-primary-text dark:border-dark-primary-text border rounded-full text-lg'>
+                        <p className='text-secondary-text text-sm mb-6 dark:text-dark-secondary-text'>{feed.description}</p>
+                        <button className='w-max flex items-center gap-2 p-2 border-primary-text dark:border-dark-primary-text border rounded-full text-lg mb-8'>
                             <div>
                                 <BsSpotify />
                             </div>
                             <div>Listen on Spotify</div>
                         </button>
+                        <p>Also available on:</p>
+                        <div className='flex gap-2'>
+                            {availableOn.map(platform => (
+                                <PlatformIcon key='link' name={platform.name} icon={platform.icon} link={platform.link} />
+                            ))}
+                        </div>
                     </div>
                 </div>
 
