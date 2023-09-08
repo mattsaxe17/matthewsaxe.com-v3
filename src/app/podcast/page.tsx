@@ -17,7 +17,6 @@ export const metadata: Metadata = {
 
 async function getFeed() {
     const feed = await parser.parseURL(process.env.NEXT_RSS_FEED_URL as string);
-    console.log(feed);
     return feed;
 }
 
