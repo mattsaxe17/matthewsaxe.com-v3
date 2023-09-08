@@ -13,9 +13,10 @@ type NavDrawerProps = {
     toggleNavDrawer: (open: boolean) => void;
     navItems: Array<NavItem>;
     socials: Array<{ link: string; icon: JSX.Element }>;
+    quotes?: Array<string>;
 };
 
-export default function NavDrawer({ open, navItems, socials, toggleNavDrawer }: NavDrawerProps) {
+export default function NavDrawer({ open, navItems, socials, toggleNavDrawer, quotes }: NavDrawerProps) {
     return (
         <SwipeableDrawer anchor='right' open={open} onClose={() => toggleNavDrawer(false)} onOpen={() => toggleNavDrawer(true)} sx={{ '.MuiLink-root': { textDecoration: 'none' } }} onClick={e => e.stopPropagation()}>
             <div className='flex min-w-6xl bg-primary-bg dark:bg-dark-primary-bg p-6 h-full w-full justify-between align-start'>
@@ -41,6 +42,8 @@ export default function NavDrawer({ open, navItems, socials, toggleNavDrawer }: 
                     </div>
                 </div>
             </div>
+
+            {quotes && <p className='h-0 absolute left-2 bottom-2 text-lg -rotate-90 origin-top-left text-bold text-[#c1c1c1] dark:text-[#0f0f0f] italic'>{quotes[Math.floor(quotes.length * Math.random())]}</p>}
         </SwipeableDrawer>
     );
 }

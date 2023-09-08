@@ -14,13 +14,13 @@ type NavItem = {
 type AppBarProps = {
     navItems: Array<NavItem>;
     socials: Array<{ link: string; icon: JSX.Element }>;
+    quotes?: Array<string>;
 };
 
-export default function AppBar({ navItems, socials }: AppBarProps) {
+export default function AppBar({ navItems, socials, quotes }: AppBarProps) {
     const [scrollPos, setScrollPos] = useState(100);
     const [conditionalStyles, setConditionalStyles] = useState('');
     const [navDrawerOpen, setNavDrawerOpen] = useState(false);
-    const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
     const toggleNavDrawer = (override: boolean) => {
         override === undefined ? setNavDrawerOpen(!navDrawerOpen) : setNavDrawerOpen(override);
@@ -67,7 +67,7 @@ export default function AppBar({ navItems, socials }: AppBarProps) {
 
             <div className='md:hidden' onClick={() => setNavDrawerOpen(true)}>
                 <Image src='/menu.svg' alt='Menu svg' width={40} height={50}></Image>
-                <NavDrawer open={navDrawerOpen} navItems={navItems} socials={socials} toggleNavDrawer={toggleNavDrawer} />
+                <NavDrawer open={navDrawerOpen} navItems={navItems} socials={socials} toggleNavDrawer={toggleNavDrawer} quotes={quotes} />
             </div>
 
             <div className='hidden md:flex gap-4 items-center'>

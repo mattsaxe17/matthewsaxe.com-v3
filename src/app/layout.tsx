@@ -30,12 +30,22 @@ const socials = [
     { link: 'mailto:matt@matthewsaxe.com', icon: <MdEmail /> },
 ];
 
+const quotes = [
+    `"The happiness of your life depends upon the quality of your thoughts." -Marcus Aurelius`,
+    `"I'll forgive an enemy before I forgive a friend, One is breaking a code, one is actin' in character." -Russ`,
+    `"Waste no more time arguing about what a good man should be. Be one." -Marcus Aurelius`,
+    `"Most already know what to do and simply don’t do it. It’s not ignorance. It’s fear." -Alex Hormozi`,
+    `"Rather than picking up your next book, take action on your last book." -Alex Hormozi`,
+    `“You Cannot Overestimate the Unimportance of Practically Everything.”- John Maxwell`,
+    `“Tradition is a set of solutions for which we have forgotten the problems, take the solution away and often the problem comes back.”– Chris Williamson`,
+];
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang='en' className='dark'>
             <body className='bg-primary-bg dark:bg-dark-primary-bg max-w-full overflow-x-hidden'>
                 <Providers>
-                    <AppBar navItems={navItems} socials={socials}></AppBar>
+                    <AppBar navItems={navItems} socials={socials} quotes={quotes}></AppBar>
                     {children}
                     <SocialBar desktopOnly fixed location='right' socials={socials} />
                 </Providers>
