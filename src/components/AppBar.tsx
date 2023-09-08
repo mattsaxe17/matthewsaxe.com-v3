@@ -21,6 +21,7 @@ export default function AppBar({ navItems, socials, quotes }: AppBarProps) {
     const [scrollPos, setScrollPos] = useState(100);
     const [conditionalStyles, setConditionalStyles] = useState('');
     const [navDrawerOpen, setNavDrawerOpen] = useState(false);
+    const [showV3Announcement, setShowV3Announcement] = useState(false);
 
     const toggleNavDrawer = (override: boolean) => {
         override === undefined ? setNavDrawerOpen(!navDrawerOpen) : setNavDrawerOpen(override);
@@ -61,8 +62,10 @@ export default function AppBar({ navItems, socials, quotes }: AppBarProps) {
 
     return (
         <div className={`fixed flex justify-between px-6 py-8 items-center w-full -delay-100 duration-500 transition-all ${conditionalStyles}`}>
-            <Link href='/'>
+            <Link href='/' className='flex items-center gap-2 cursor-help'>
                 <Image src='/logo.svg' alt='My logo' width={40} height={50}></Image>
+                <p className='italic text-primary' onMouseEnter={() => setShowV3Announcement(true)} onMouseLeave={() => setShowV3Announcement(false)}>V3</p>
+                {showV3Announcement && <p className='fixed top-32 left-5 bg-primary-bg dark:bg-dark-primary-bg italic text-primary-text dark:text-dark-primary-text border-primary px-5 py-2 rounded-full border-2'>Welcome to version 3 of the site 😎</p>}
             </Link>
 
             <div className='md:hidden' onClick={() => setNavDrawerOpen(true)}>
