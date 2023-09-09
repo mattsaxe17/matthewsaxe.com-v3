@@ -30,10 +30,10 @@ export default async function Podcast() {
     const feed = await getFeed();
 
     return (
-        <>
+        <div className='flex flex-col items-center'>
             <Watermark text='The Matt Saxe Podcast'></Watermark>
             <div className='flex flex-col'>
-                <div className='flex flex-col items-center gap-4 py-32 px-20 mb-16 md:flex-row md:items-start md:justify-center'>
+                <div className='flex flex-col items-center gap-4 py-32 px-20 md:flex-row md:items-start md:justify-center'>
                     <div>
                         <img src={feed.image?.url} alt='' className='w-48 rounded-xl shadow-xl dark:shadow-2xl dark:shadow-black md:w-96' />
                     </div>
@@ -56,7 +56,7 @@ export default async function Podcast() {
                     </div>
                 </div>
 
-                <div className='flex flex-col'>
+                <div className='flex flex-col max-w-4xl md:mx-24 md:bg-transparent'>
                     {feed.items.map(episode => (
                         <EpisodeCard
                             key={episode.guid}
@@ -65,10 +65,11 @@ export default async function Podcast() {
                             description={episode.contentSnippet as string}
                             length={episode.itunes.duration}
                             mp3Link={episode?.enclosure?.url as string}
+                            image={episode.itunes.image as string}
                         />
                     ))}
                 </div>
             </div>
-        </>
+        </div>
     );
 }

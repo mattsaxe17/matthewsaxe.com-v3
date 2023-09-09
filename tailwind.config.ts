@@ -13,6 +13,7 @@ const config: Config = {
 
             'primary-text': '#0a0a0a',
             'secondary-text': '#525252',
+            'faint-text': '#bcbcbc',
             'primary-bg': '#e5e5e5',
         },
         extend: {
