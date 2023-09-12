@@ -36,7 +36,7 @@ function EpisodeCard({ title, dateString, description, length, mp3Link, image }:
 
     return (
         <div className='flex items-stretch gap-3 px-5 py-6 border-b md:border-0 md:shadow-2xl md:rounded-lg md:mb-5 bg-primary-bg dark:bg-dark-primary-bg'>
-            <div className='basis-16 shrink-0 hidden sm:block relative group'>
+            <div className='basis-16 shrink-0 hidden sm:block relative group self-start'>
                 <img src={image} className='w-full' alt={title} />
                 <button className='absolute text-5xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50' onClick={togglePlay}>
                     {isPlaying ? <AiFillPauseCircle /> : <AiFillPlayCircle className='hidden group-hover:block' />}
