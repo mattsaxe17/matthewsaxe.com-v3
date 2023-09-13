@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import SectionHeader from '@/components/SectionHeader';
 import Watermark from '@/components/Watermark';
@@ -52,6 +53,8 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
+            <Footer />
         </>
     );
 }
