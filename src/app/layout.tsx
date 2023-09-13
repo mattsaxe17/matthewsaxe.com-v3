@@ -47,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Providers>
                     <AppBar navItems={navItems} socials={socials} quotes={quotes}></AppBar>
                     {children}
-                    <SocialBar desktopOnly fixed location='right' socials={socials} />
+                    <SocialBar desktopOnly fixed location='right' socials={socials} rotateable />
                 </Providers>
             </body>
         </html>
