@@ -29,7 +29,7 @@ export default function AppBar({ navItems, socials, quotes }: AppBarProps) {
 
     // If no dependencies are provided, the callback will be executed upon render
     useEffect(() => {
-        window.onscroll = () => {
+        window.addEventListener('scroll', () => {
             const currentScrollPos = window.scrollY;
             const styles = [];
 
@@ -49,7 +49,7 @@ export default function AppBar({ navItems, socials, quotes }: AppBarProps) {
 
             setConditionalStyles(styles.join(' '));
             setScrollPos(currentScrollPos);
-        };
+        });
     });
 
     useEffect(() => {
@@ -61,11 +61,15 @@ export default function AppBar({ navItems, socials, quotes }: AppBarProps) {
     });
 
     return (
-        <div className={`fixed flex justify-between px-6 py-8 items-center w-full -delay-100 duration-500 transition-all ${conditionalStyles}`}>
-            <Link href='/' className='flex items-center gap-2 cursor-help'>
+        <div className={`fixed flex justify-between px-6 py-8 items-center w-full -delay-100 duration-500 transition-all z-50 ${conditionalStyles}`}>
+            <Link href='/' className='flex items-center gap-2'>
                 <Image src='/logo.svg' alt='My logo' width={40} height={50}></Image>
-                <p className='italic text-primary' onMouseEnter={() => setShowV3Announcement(true)} onMouseLeave={() => setShowV3Announcement(false)}>V3</p>
-                {showV3Announcement && <p className='fixed top-32 left-5 bg-primary-bg dark:bg-dark-primary-bg italic text-primary-text dark:text-dark-primary-text border-primary px-5 py-2 rounded-full border-2'>Welcome to version 3 of the site 😎</p>}
+                <p className='italic text-primary cursor-help' onMouseEnter={() => setShowV3Announcement(true)} onMouseLeave={() => setShowV3Announcement(false)}>
+                    V3
+                </p>
+                {showV3Announcement && (
+                    <p className='fixed top-32 left-5 bg-primary-bg dark:bg-dark-primary-bg italic text-primary-text dark:text-dark-primary-text border-primary px-5 py-2 rounded-full border-2'>Welcome to version 3 of the site 😎</p>
+                )}
             </Link>
 
             <div className='md:hidden' onClick={() => setNavDrawerOpen(true)}>
@@ -78,7 +82,7 @@ export default function AppBar({ navItems, socials, quotes }: AppBarProps) {
                     <Link href={navItem.url} key={navItem.label} className='text-primary-text dark:text-dark-primary-text group'>
                         <div className='group-hover:animate-bounce group-hover:text-secondary-text ease-in-out transition transform'>
                             <span className='text-primary font-bold'>{`00${ind}`.slice(-2)}.&nbsp;</span>
-                            <span className='font-thin'>{navItem.label}</span>
+                            <span>{navItem.label}</span>
                         </div>
                     </Link>
                 ))}
