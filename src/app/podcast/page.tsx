@@ -32,8 +32,8 @@ export default async function Podcast() {
 
     return (
         <>
+            <Watermark text='The Matt Saxe Podcast'></Watermark>
             <div className='flex flex-col items-center mb-48'>
-                <Watermark text='The Matt Saxe Podcast'></Watermark>
                 <div className='flex flex-col'>
                     <div className='flex flex-col items-center gap-4 py-32 px-20 md:flex-row md:items-start md:justify-center'>
                         <div>

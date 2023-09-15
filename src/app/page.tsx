@@ -8,17 +8,17 @@ const whatIveBeenUpTo = ['Muay Thai', 'Jiu Jitsu', 'Reading', 'Journaling', 'Bui
 export default function Home() {
     return (
         <>
+            <Watermark text='Saxe'></Watermark>
             <div className='mb-48'>
-                <Watermark text='Saxe'></Watermark>
                 <Hero
                     intro="Hello I'm"
                     name='Matt Saxe'
                     constant='I'
                     characteristics={['build software.', 'record podcasts.', 'read books.', 'practice martial arts.']}
-                    description="I'm a software engineer in Dallas, TX. Unfortunately, I am currently not building any software for clients. I've been working very hard on some other projects though, so feel free to check back here to see what I'm up to. Big things are coming."
+                    description="I'm a software engineer in Dallas, TX building meaningful software. I am currently not building any software for clients, but I've been working hard on some other projects!"
                     cta={{
-                        url: '',
-                        label: 'Reach out',
+                        url: '/podcast',
+                        label: 'Listen to the Pod',
                     }}
                 ></Hero>
 
@@ -56,7 +56,6 @@ export default function Home() {
                     </div>
                 </section>
             </div>
-
             <Footer />
         </>
     );
