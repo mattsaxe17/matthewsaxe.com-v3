@@ -3,7 +3,7 @@ import Hero from '@/components/Hero';
 import SectionHeader from '@/components/SectionHeader';
 import Watermark from '@/components/Watermark';
 
-const whatIveBeenUpTo = ['Vue', 'React', 'Nuxt.js/Next.js', 'Sass', '.NET Core', 'SQL Server', 'Strapi', 'Handlebars', 'Docker', 'Netlify functions'];
+const whatIveBeenUpTo = ['Muay Thai', 'Jiu Jitsu', 'Reading', 'Journaling', 'Building Software', 'Calisthenics', 'Podcasting', 'Climbing', 'Running'];
 
 export default function Home() {
     return (
