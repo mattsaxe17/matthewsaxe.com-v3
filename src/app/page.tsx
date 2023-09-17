@@ -25,7 +25,7 @@ export default function Home() {
                 <section className='px-6 md:px-12 flex flex-col items-center max-w-screen-xl mx-auto'>
                     <SectionHeader prefix='00.' title='About Me' anchor='about'></SectionHeader>
 
-                    <p className='text-secondary-text dark:text-dark-secondary-text mb-10'>
+                    <p className='text-secondary-text dark:text-dark-secondary-text mb-10 max-w-screen-lg'>
                         If you know me, you know I have long list of interests. I&apos;m passionate about fitness and martial arts, read often, like to cook, and have recently adopted an animal based diet. As you probably guessed, I also have a deep
                         passion for writing software. From websites to FitBit watch faces, I am passionate about problem solving through the medium of code. It all started in 11th grade, where I taught myself HTML, CSS, and Javascript in study
                         hall...

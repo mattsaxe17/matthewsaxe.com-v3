@@ -14,17 +14,21 @@ export default function Software() {
             <Watermark text='Software'></Watermark>
 
             <section className='px-6 md:px-12 flex flex-col items-center max-w-screen-xl mx-auto pt-48 mb-32'>
-                <SectionHeader prefix='00.' title='Career, Work, and Side Projects' anchor='about'></SectionHeader>
+                <SectionHeader prefix='00.' title='Career / Side Projects' anchor='about'></SectionHeader>
 
-                <p className='text-secondary-text dark:text-dark-secondary-text mb-10'>
-                    Though I haven&apos;t been actively building software for clients lately, I have been learning many new technologies, studying design patterns, and working on a couple side projects like this one. I am fascinated by software architecture and system design, and I intend to continue learning and growing in this area.
-                    <br/>
-                    <br/>
+                <p className='text-secondary-text dark:text-dark-secondary-text mb-16 max-w-screen-lg'>
+                    Though I haven&apos;t been actively building software for clients lately, I have been learning many new technologies, studying design patterns, and working on a couple side projects like this one. I am fascinated by software
+                    architecture and system design, and I intend to continue learning and growing in this area.
+                    <br />
+                    <br />
                     In my professional capacity, I work daily with Dotnet Core, SQL Server, React, React Native, Redis, and Docker/Kubernetes with various cloud platforms. I also get the chance to work with Typescript from time to time, which I love.
                     <br />
-                    <br/>
-                    I am committed to continuing to improve my skills, write cleaner code, and learn new technologies. (and make more frequent commits 😬)
+                    <br />I am committed to continuing to improve my skills, write cleaner code, and learn new technologies. (and make more frequent commits 😬)
                 </p>
+
+                <div className='w-72 md:w-96 rounded-lg border-primary border-4 lg:mr-16'>
+                    <img src='/code.jpg' alt='me' className='grayscale transition-all duration-500 translate-x-8 translate-y-10 rounded-md hover:translate-x-0 hover:translate-y-0 hover:scale-110 hover:grayscale-0' />
+                </div>
             </section>
 
             <section className='px-6 md:px-12 flex flex-col items-center max-w-screen-xl mx-auto'>
