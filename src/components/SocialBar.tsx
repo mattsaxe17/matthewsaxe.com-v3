@@ -12,7 +12,7 @@ type SocialBarProps = {
 
 function SocialBar({ location, fixed, desktopOnly, socials, rotateable }: SocialBarProps) {
     const [conditionalStyles, setConditionalStyles] = useState({ parent: '', children: '' });
-    const propClasses = `${location === 'right' ? 'right-6' : location === 'left' ? 'left-6' : ''} ${fixed ? 'fixed' : 'absolute'} ${desktopOnly ? 'hidden md:flex' : ''}`;
+    const propClasses = `${location === 'right' ? 'right-2' : location === 'left' ? 'left-2' : ''} ${fixed ? 'fixed' : 'absolute'} ${desktopOnly ? 'hidden md:flex' : ''}`;
 
     // If no dependencies are provided, the callback will be executed upon render
     useEffect(() => {

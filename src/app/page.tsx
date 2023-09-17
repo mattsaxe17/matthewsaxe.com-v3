@@ -22,7 +22,7 @@ export default function Home() {
                     }}
                 ></Hero>
 
-                <section className='px-6 flex flex-col items-center max-w-screen-xl mx-auto'>
+                <section className='px-6 md:px-12 flex flex-col items-center max-w-screen-xl mx-auto'>
                     <SectionHeader prefix='00.' title='About Me' anchor='about'></SectionHeader>
 
                     <p className='text-secondary-text dark:text-dark-secondary-text mb-10'>
