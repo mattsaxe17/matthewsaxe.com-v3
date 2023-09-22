@@ -20,19 +20,22 @@ function EpisodeCard({ title, dateString, description, length, mp3Link, image }:
     const [currentTimestamp, setCurrentTimestamp] = useState(0);
     const descriptionThreshold = 190;
     const longDescription = description.length > descriptionThreshold;
-    const audioRef = useRef(null);
+    const audioRef = useRef<HTMLAudioElement>(null);
 
     const togglePlay = () => {
-        if (!isPlaying) {
-            setInterval(() => {
-                setCurrentTimestamp(audioRef.current.currentTime);
-            }, 250)
-            audioRef.current.play();
-        } else {
-            audioRef.current.pause();
-        }
-        setIsPlaying(!isPlaying);
+      if (!isPlaying) {
+        setInterval(() => {
+          if (audioRef.current) {
+            setCurrentTimestamp(audioRef.current.currentTime);
+          }
+        }, 250);
+        audioRef.current?.play();
+      } else {
+        audioRef.current?.pause();
+      }
+      setIsPlaying(!isPlaying);
     };
+
 
     return (
         <div className='flex items-stretch gap-3 px-5 py-6 border-b md:border-0 md:shadow-2xl md:rounded-lg md:mb-5 bg-primary-bg dark:bg-dark-primary-bg'>
