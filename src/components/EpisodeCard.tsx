@@ -51,7 +51,7 @@ function EpisodeCard({ title, dateString, description, length, mp3Link, image }:
                     <h3 className='font-bold'>{title}</h3>
                     <p className='text-sm hidden md:block'>{longDescription && !expanded ? description.substring(0, descriptionThreshold) + '...' : description}</p>
                     {longDescription && (
-                        <p onClick={() => setExpanded(!expanded)} className='text-sm text-secondary-text dark:text-dark-secondary-text cursor-pointer'>
+                        <p onClick={() => setExpanded(!expanded)} className='text-sm text-secondary-text dark:text-dark-secondary-text cursor-pointer hidden md:block'>
                             {expanded ? 'See less' : 'See more'}
                         </p>
                     )}
