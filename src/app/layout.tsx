@@ -18,7 +18,7 @@ const navItems = [
     { label: 'Podcast', url: '/podcast' },
     // { label: 'Blog', url: '/blog' },
     // { label: 'Reading', url: '/reading' },
-    { label: 'Contact', url: '/contact' },
+    // { label: 'Contact', url: '/#contact' },
 ];
 
 const socials = [
