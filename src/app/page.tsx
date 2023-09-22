@@ -14,7 +14,7 @@ export default function Home() {
                     intro="Hello I'm"
                     name='Matt Saxe'
                     constant='I'
-                    characteristics={['build software.', 'record podcasts.', 'read books.', 'practice martial arts.']}
+                    characteristics={['build software.', 'record podcasts.', 'practice martial arts.']}
                     description="I'm a software engineer in Dallas, TX building meaningful software. I am currently not building any software for clients, but I've been working hard on some other projects!"
                     cta={{
                         url: '/podcast',
@@ -51,7 +51,7 @@ export default function Home() {
                         </div>
 
                         <div className='w-72 rounded-lg border-primary border-4 lg:mr-16'>
-                            <img src='/headshot.jpg' alt='me' className='grayscale transition-all duration-500 translate-x-8 translate-y-10 rounded-md hover:translate-x-0 hover:translate-y-0 hover:scale-110 hover:grayscale-0' />
+                            <img src='/headshot.png' alt='me' className='grayscale transition-all duration-500 translate-x-8 translate-y-10 rounded-md hover:translate-x-0 hover:translate-y-0 hover:scale-110 hover:grayscale-0' />
                         </div>
                     </div>
                 </section>
