@@ -23,7 +23,7 @@ export default function Software() {
                     <br />
                     In my professional capacity, I work daily with Dotnet Core, SQL Server, React, React Native, Redis, and Docker/Kubernetes with various cloud platforms. I also get the chance to work with Typescript from time to time, which I love.
                     <br />
-                    <br />I am committed to continuing to improve my skills, write cleaner code, and learn new technologies. (and make more frequent commits 😬)
+                    <br />I&apos;m committed to improving my skills, writing cleaner code, learning new technologies, and building larger, more complex applications. (and making more frequent commits 😬)
                 </p>
 
                 <div className='w-72 md:w-96 rounded-lg border-primary border-4 lg:mr-16'>
