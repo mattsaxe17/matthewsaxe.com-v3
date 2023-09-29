@@ -1,3 +1,5 @@
+'use client'
+
 import EpisodeCard from '@/components/EpisodeCard';
 import Watermark from '@/components/Watermark';
 import moment from 'moment';
