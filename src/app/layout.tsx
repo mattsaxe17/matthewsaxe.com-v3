@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const navItems = [
     { label: 'About', url: '/#about' },
     { label: 'Software', url: '/software' },
-    { label: 'Podcast', url: '/podcast' },
+    // { label: 'Podcast', url: '/podcast' },
     // { label: 'Blog', url: '/blog' },
     // { label: 'Reading', url: '/reading' },
     // { label: 'Contact', url: '/#contact' },

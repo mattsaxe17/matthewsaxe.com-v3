@@ -3,7 +3,7 @@ import Hero from '@/components/Hero';
 import SectionHeader from '@/components/SectionHeader';
 import Watermark from '@/components/Watermark';
 
-const whatIveBeenUpTo = ['Muay Thai', 'Jiu Jitsu', 'Reading', 'Journaling', 'Building Software', 'Calisthenics', 'Podcasting', 'Climbing', 'Running'];
+const whatIveBeenUpTo = ['Muay Thai', 'Jiu Jitsu', 'MMA','Running', 'Reading', 'Journaling', 'Building Software', 'Calisthenics' ];
 
 export default function Home() {
     return (
@@ -14,11 +14,11 @@ export default function Home() {
                     intro="Hello I'm"
                     name='Matt Saxe'
                     constant='I'
-                    characteristics={['build software.', 'record podcasts.', 'practice martial arts.']}
+                    characteristics={['build modern software.', 'solve complex problems.', 'practice MMA.']}
                     description="I'm a software engineer in Dallas, TX building meaningful software. I am currently not building any software for clients, but I've been working hard on some other projects!"
                     cta={{
-                        url: '/podcast',
-                        label: 'Listen to the Pod',
+                        url: '/software',
+                        label: 'See what I\'m up to',
                     }}
                 ></Hero>
 
