@@ -4,24 +4,17 @@ import EpisodeCard from '@/components/EpisodeCard';
 import Watermark from '@/components/Watermark';
 import moment from 'moment';
 import { Metadata } from 'next';
-import Parser from 'rss-parser';
 import { BsSpotify } from 'react-icons/bs';
 import { SiGooglepodcasts } from 'react-icons/si';
 import { PiApplePodcastsLogoFill } from 'react-icons/pi';
 import { AiOutlineAmazon } from 'react-icons/ai';
 import PlatformIcon from '@/components/PlatformIcon';
 import Footer from '@/components/Footer';
-
-const parser = new Parser();
+import { GET as getFeed } from './feed/route';
 
 export const metadata: Metadata = {
     title: 'The Matt Saxe Podcast',
 };
-
-async function getFeed() {
-    const feed = await parser.parseURL(process.env.NEXT_RSS_FEED_URL as string);
-    return feed;
-}
 
 const availableOn: Array<{ name: string; icon: JSX.Element; link: string }> = [
     { name: 'Amazon Music', icon: <AiOutlineAmazon />, link: 'https://music.amazon.com/podcasts/49048046-8c41-44b6-a7a0-efc081c958c1/the-matt-saxe-podcast' },
