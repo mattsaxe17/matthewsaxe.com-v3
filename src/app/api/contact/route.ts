@@ -7,7 +7,8 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { name, email, message } = body as { name: string; email: string; message: string };
 
-    if (!name || !email || !message || message.length < 20) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!name || !email || !emailRegex.test(email) || !message || message.length < 20) {
         return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
     }
 

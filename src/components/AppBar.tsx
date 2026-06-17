@@ -26,7 +26,7 @@ export default function AppBar({ navItems, socials }: AppBarProps) {
     };
 
     useEffect(() => {
-        window.addEventListener('scroll', () => {
+        const handleScroll = () => {
             const currentScrollPos = window.scrollY;
             const styles = [];
 
@@ -46,7 +46,9 @@ export default function AppBar({ navItems, socials }: AppBarProps) {
 
             setConditionalStyles(styles.join(' '));
             setScrollPos(currentScrollPos);
-        });
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     });
 
     useEffect(() => {
@@ -54,6 +56,7 @@ export default function AppBar({ navItems, socials }: AppBarProps) {
             if (window.innerWidth > 768) toggleNavDrawer(false);
         };
         window.addEventListener('resize', handleresize);
+        return () => window.removeEventListener('resize', handleresize);
     });
 
     return (

@@ -10,7 +10,7 @@ type ProjectProps = {
     githubLink?: string;
 };
 
-function PlatformIcon({ title, imageUrl, description, techStack, githubLink, projectLink }: ProjectProps) {
+function Project({ title, imageUrl, description, techStack, githubLink, projectLink }: ProjectProps) {
     return (
         <div className='flex flex-col shadow-2xl rounded-lg bg-primary-bg dark:bg-dark-primary-bg shadow-dark-faint-text overflow-hidden'>
             <img src={imageUrl} />
@@ -24,7 +24,7 @@ function PlatformIcon({ title, imageUrl, description, techStack, githubLink, pro
                     )}
                 </div>
 
-                <p className='text-lg font-bold mb-1 md:text-xl'>{projectLink ? <Link className='hover:text-secondary dark:hover:text-dark-secondary-text' href={projectLink}>{title}</Link> : <>{title}</>} </p>
+                <p className='text-lg font-bold mb-1 md:text-xl'>{projectLink ? <Link className='hover:text-primary' href={projectLink}>{title}</Link> : <>{title}</>} </p>
 
                 <p className='text-sm text-secondary-text dark:text-dark-secondary-text mb-2 md:text-lg'>{description}</p>
                 <div className='flex gap-3'>
@@ -39,4 +39,4 @@ function PlatformIcon({ title, imageUrl, description, techStack, githubLink, pro
     );
 }
 
-export default PlatformIcon;
+export default Project;

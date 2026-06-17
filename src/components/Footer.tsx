@@ -13,7 +13,7 @@ export default function Footer() {
             <p className='text-sm'>© {new Date().getFullYear()} Matthew Saxe</p>
             <div className='flex gap-4 text-xl'>
                 {links.map(({ href, icon, label }) => (
-                    <a key={label} href={href} target='_blank' aria-label={label} className='hover:text-primary transition-colors'>
+                    <a key={label} href={href} target='_blank' rel='noopener noreferrer' aria-label={label} className='hover:text-primary transition-colors'>
                         {icon}
                     </a>
                 ))}

@@ -6,7 +6,7 @@ type SocialBarProps = {
     location: 'right' | 'left';
     fixed: boolean;
     desktopOnly: boolean;
-    socials: Array<{ link: string; icon: JSX.Element }>;
+    socials: Array<{ link: string; icon: import("react").ReactElement }>;
     rotateable?: boolean;
 };
 
@@ -16,7 +16,7 @@ function SocialBar({ location, fixed, desktopOnly, socials, rotateable }: Social
 
     // If no dependencies are provided, the callback will be executed upon render
     useEffect(() => {
-        window.addEventListener('scroll', () => {
+        const handleScroll = () => {
             const atBottom = isWindowScrolledToBottom();
             let parentStyles = '';
             let childStyles = '';
@@ -27,7 +27,9 @@ function SocialBar({ location, fixed, desktopOnly, socials, rotateable }: Social
             }
 
             setConditionalStyles({ parent: parentStyles, children: childStyles });
-        });
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     });
 
     function isWindowScrolledToBottom() {
