@@ -7,14 +7,14 @@ import { MdEmail } from 'react-icons/md';
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
 
 export const metadata: Metadata = {
-    title: 'Home | Matt Saxe',
-    description:
-        "I'm a software engineer in Dallas, TX. Unfortunately, I am currently not building any software for clients. I've been working very hard on some other projects though, so feel free to check back here to see what I'm up to. Big things are coming.",
+    title: 'Matt Saxe | Software Engineer & Freelancer',
+    description: "I'm a software engineer in Dallas, TX helping small businesses automate processes and solve real problems with code.",
 };
 
 const navItems = [
-    { label: 'About', url: '/#about' },
-    { label: 'Software', url: '/software' },
+    { label: 'Services', url: '/#services' },
+    { label: 'Work', url: '/#work' },
+    { label: 'Contact', url: '/#contact' },
 ];
 
 const socials = [
