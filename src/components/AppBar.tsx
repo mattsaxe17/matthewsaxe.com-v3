@@ -13,21 +13,18 @@ type NavItem = {
 
 type AppBarProps = {
     navItems: Array<NavItem>;
-    socials: Array<{ link: string; icon: JSX.Element }>;
-    quotes?: Array<string>;
+    socials: Array<{ link: string; icon: import('react').ReactElement }>;
 };
 
-export default function AppBar({ navItems, socials, quotes }: AppBarProps) {
+export default function AppBar({ navItems, socials }: AppBarProps) {
     const [scrollPos, setScrollPos] = useState(100);
     const [conditionalStyles, setConditionalStyles] = useState('');
     const [navDrawerOpen, setNavDrawerOpen] = useState(false);
-    const [showV3Announcement, setShowV3Announcement] = useState(false);
 
     const toggleNavDrawer = (override: boolean) => {
         override === undefined ? setNavDrawerOpen(!navDrawerOpen) : setNavDrawerOpen(override);
     };
 
-    // If no dependencies are provided, the callback will be executed upon render
     useEffect(() => {
         window.addEventListener('scroll', () => {
             const currentScrollPos = window.scrollY;
@@ -56,25 +53,18 @@ export default function AppBar({ navItems, socials, quotes }: AppBarProps) {
         const handleresize = () => {
             if (window.innerWidth > 768) toggleNavDrawer(false);
         };
-
         window.addEventListener('resize', handleresize);
     });
 
     return (
         <div className={`fixed flex justify-between px-6 py-8 items-center w-full -delay-100 duration-500 transition-all z-50 ${conditionalStyles}`}>
             <Link href='/' className='flex items-center gap-2'>
-                <Image src='/logo.svg' alt='My logo' width={40} height={50}></Image>
-                <p className='italic text-primary cursor-help' onMouseEnter={() => setShowV3Announcement(true)} onMouseLeave={() => setShowV3Announcement(false)}>
-                    V3
-                </p>
-                {showV3Announcement && (
-                    <p className='fixed top-32 left-5 bg-primary-bg dark:bg-dark-primary-bg italic text-primary-text dark:text-dark-primary-text border-primary px-5 py-2 rounded-full border-2'>Welcome to version 3 of the site 😎</p>
-                )}
+                <Image src='/logo.svg' alt='My logo' width={40} height={50} />
             </Link>
 
             <div className='md:hidden' onClick={() => setNavDrawerOpen(true)}>
-                <Image src='/menu.svg' alt='Menu svg' width={40} height={50}></Image>
-                <NavDrawer open={navDrawerOpen} navItems={navItems} socials={socials} toggleNavDrawer={toggleNavDrawer} quotes={quotes} />
+                <Image src='/menu.svg' alt='Menu svg' width={40} height={50} />
+                <NavDrawer open={navDrawerOpen} navItems={navItems} socials={socials} toggleNavDrawer={toggleNavDrawer} />
             </div>
 
             <div className='hidden md:flex gap-4 items-center'>
@@ -86,8 +76,7 @@ export default function AppBar({ navItems, socials, quotes }: AppBarProps) {
                         </div>
                     </Link>
                 ))}
-
-                <ThemeToggler></ThemeToggler>
+                <ThemeToggler />
             </div>
         </div>
     );
