@@ -5,25 +5,25 @@ import ServiceCard from '@/components/ServiceCard';
 const services = [
     {
         icon: <LuZap />,
-        headline: 'Stop doing it manually',
-        body: "If your team copies data between spreadsheets, sends the same emails every week, or chases approvals by hand — I can automate it. You'll get time back and fewer mistakes.",
+        headline: 'Ship in days, not months',
+        body: 'I build with an AI-first workflow — AI does the heavy lifting on scaffolding, boilerplate, and iteration while I own the architecture and the details. You get production software in a fraction of the usual time and cost.',
     },
     {
         icon: <LuLayoutDashboard />,
-        headline: 'Software built for your business',
-        body: "Off-the-shelf tools don't always fit. I build internal tools, dashboards, and client-facing apps tailored to how your business actually works.",
+        headline: 'Full-stack, end to end',
+        body: 'Postgres schema to pixel — internal tools, dashboards, client-facing apps, and full products, built to fit how your business actually works. Most recently: Rollr, a live SaaS I shipped solo.',
     },
     {
         icon: <LuBrain />,
-        headline: 'Let AI do the heavy lifting',
-        body: 'Use AI to summarize documents, extract data, route decisions, or generate content — integrated into your existing workflow, not bolted on.',
+        headline: 'Real AI, built into the product',
+        body: 'Not a chatbot bolted on the side. I wire LLMs into real workflows — summarize documents, extract data, route decisions, generate content — so the AI does work that matters.',
     },
 ];
 
 export default function ServicesSection() {
     return (
         <section className='px-6 md:px-12 flex flex-col items-center max-w-screen-xl mx-auto py-24'>
-            <SectionHeader prefix='01.' title='Services' anchor='services' />
+            <SectionHeader prefix='01.' title='What I Do' anchor='services' />
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8 w-full'>
                 {services.map(service => (
                     <ServiceCard key={service.headline} icon={service.icon} headline={service.headline} body={service.body} />
