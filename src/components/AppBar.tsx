@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { BsMoonStars } from 'react-icons/bs';
 import { useEffect, useState } from 'react';
 import NavDrawer from '@/components/NavDrawer';
 
@@ -74,14 +73,10 @@ export default function AppBar({ navItems, socials }: AppBarProps) {
             <div className='hidden md:flex gap-[30px] items-center text-[15px]'>
                 {navItems.map((navItem: NavItem, ind: number) => (
                     <Link href={navItem.url} key={navItem.label} className='text-[#e5e7eb] hover:text-[#e5e7eb] group'>
-                        <span className='font-mono text-[13px] font-bold text-primary'>{`00${ind}`.slice(-2)}.&nbsp;</span>
+                        <span className='font-mono text-[13px] font-bold text-[#8b8b8b]'>{`00${ind}`.slice(-2)}.&nbsp;</span>
                         <span className='group-hover:text-primary transition-colors'>{navItem.label}</span>
                     </Link>
                 ))}
-                <span className='h-5 w-px bg-[#3d3a35]' />
-                <span className='inline-flex h-[34px] w-[34px] items-center justify-center rounded-full border border-[#3d3a35] text-primary'>
-                    <BsMoonStars size={15} />
-                </span>
             </div>
         </div>
     );

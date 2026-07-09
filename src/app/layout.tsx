@@ -3,6 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Bricolage_Grotesque, Hanken_Grotesk, JetBrains_Mono } from 'next/font/google';
 import Providers from '@/components/Providers';
+import SocialBar from '@/components/SocialBar';
 import { MdEmail } from 'react-icons/md';
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
 
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Providers>
                     <AppBar navItems={navItems} socials={socials}></AppBar>
                     {children}
+                    <SocialBar desktopOnly fixed location='right' socials={socials} rotateable />
                 </Providers>
             </body>
         </html>

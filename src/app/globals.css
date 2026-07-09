@@ -6,8 +6,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: #ed6d3c; text-decoration: none; }
-a:hover { color: #f38a5f; }
+@layer base {
+  a { color: #ed6d3c; text-decoration: none; }
+  a:hover { color: #f38a5f; }
+}
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(14px); }

@@ -1,6 +1,6 @@
-import { Link, SwipeableDrawer } from '@mui/material';
+import { SwipeableDrawer } from '@mui/material';
+import Link from 'next/link';
 import SocialBar from './SocialBar';
-import ThemeToggler from '@/components/ThemeToggler';
 import { LuPanelRightClose } from 'react-icons/lu';
 
 type NavItem = {
@@ -22,22 +22,20 @@ export default function NavDrawer({ open, navItems, socials, toggleNavDrawer }: 
             open={open}
             onClose={() => toggleNavDrawer(false)}
             onOpen={() => toggleNavDrawer(true)}
-            sx={{ '.MuiLink-root': { textDecoration: 'none' } }}
             onClick={e => e.stopPropagation()}
         >
-            <div className='flex min-w-6xl bg-primary-bg dark:bg-dark-primary-bg p-6 h-full w-full justify-between align-start'>
+            <div className='flex w-screen bg-primary-bg dark:bg-dark-primary-bg p-6 h-full justify-between align-start'>
                 <div className='pr-36 flex flex-col gap-3'>
                     {navItems.map((navItem: NavItem, ind: number) => (
                         <div key={navItem.label} onClick={() => toggleNavDrawer(false)}>
                             <Link href={navItem.url} className='text-primary-text dark:text-dark-primary-text group'>
                                 <div className='group-hover:text-secondary-text ease-in-out flex flex-col'>
-                                    <span className='text-primary font-bold'>{`00${ind}`.slice(-2)}.&nbsp;</span>
+                                    <span className='text-secondary-text dark:text-dark-secondary-text font-bold'>{`00${ind}`.slice(-2)}.&nbsp;</span>
                                     <span className='font-thin'>{navItem.label}</span>
                                 </div>
                             </Link>
                         </div>
                     ))}
-                    <ThemeToggler />
                     <SocialBar socials={socials} location='right' fixed={false} desktopOnly={false} />
                 </div>
                 <div>

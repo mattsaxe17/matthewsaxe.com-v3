@@ -22,7 +22,7 @@ export default function Hero({ intro, name, constant, characteristics, descripti
     const last = rest.join(' ');
 
     return (
-        <div id='hero' className='relative z-10 mx-auto flex max-w-7xl flex-col items-center gap-14 px-6 pt-16 md:px-16 lg:flex-row lg:items-center'>
+        <div id='hero' className='relative z-10 mx-auto flex max-w-7xl flex-col items-center gap-14 px-6 pt-32 md:px-16 md:pt-16 lg:flex-row lg:items-center'>
             <div className='flex-1 lg:max-w-[620px]'>
                 <p className='mb-4 font-mono text-[13px] uppercase tracking-[3px] text-primary'>{intro}</p>
                 <h1 className='font-display text-[64px] font-extrabold leading-[0.9] tracking-[-2px] text-[#f4f4f2] md:text-[100px] md:tracking-[-3px]'>
@@ -40,7 +40,7 @@ export default function Hero({ intro, name, constant, characteristics, descripti
                         {cta.label}
                     </Link>
                     {secondaryCta && (
-                        <Link href={secondaryCta.url} className='border-b border-[#3d3a35] px-2 py-[13px] text-[15px] font-semibold text-[#e5e7eb] hover:text-primary'>
+                        <Link href={secondaryCta.url} className='px-2 py-[13px] text-[15px] font-semibold text-[#e5e7eb] hover:text-primary'>
                             {secondaryCta.label}
                         </Link>
                     )}
