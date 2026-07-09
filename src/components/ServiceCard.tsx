@@ -8,10 +8,10 @@ type ServiceCardProps = {
 
 export default function ServiceCard({ icon, headline, body }: ServiceCardProps) {
     return (
-        <div className='flex flex-col gap-4 p-8 rounded-lg bg-primary-bg dark:bg-dark-primary-bg shadow-lg border border-secondary-text/20'>
-            <div className='text-4xl text-primary'>{icon}</div>
-            <h3 className='text-xl font-bold text-primary-text dark:text-dark-primary-text'>{headline}</h3>
-            <p className='text-secondary-text dark:text-dark-secondary-text leading-relaxed'>{body}</p>
+        <div className='rounded-[16px] border border-[#37332e] bg-[#2c2926] p-[26px]'>
+            <div className='mb-[18px] flex h-10 w-10 items-center justify-center rounded-[10px] bg-primary/[0.14] text-[20px] text-primary'>{icon}</div>
+            <h3 className='mb-[10px] font-display text-[20px] font-bold text-[#f4f4f2]'>{headline}</h3>
+            <p className='text-[15px] leading-[1.6] text-[#a8a6a1]'>{body}</p>
         </div>
     );
 }

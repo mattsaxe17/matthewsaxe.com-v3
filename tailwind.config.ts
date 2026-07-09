@@ -17,6 +17,11 @@ const config: Config = {
             'primary-bg': '#e5e5e5',
         },
         extend: {
+            fontFamily: {
+                sans: ['var(--font-sans)', 'sans-serif'],
+                display: ['var(--font-display)', 'sans-serif'],
+                mono: ['var(--font-mono)', 'monospace'],
+            },
             keyframes: {
                 rotateDown: {
                     '0%': {

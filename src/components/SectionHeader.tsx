@@ -6,11 +6,10 @@ type HeaderProps = {
 
 function SectionHeader({ prefix, title, anchor }: HeaderProps) {
     return (
-        <div id={anchor} className='flex items-center justify-center pb-10 m-auto w-full'>
-            <h2 className='font-bold text-3xl w-full flex items-center whitespace-nowrap gap-3 after:content-[""] after:block after:relative after:h-px after:bg-primary after:w-full'>
-                <span className='text-primary text-xl '>{prefix}</span>
-                {title}
-            </h2>
+        <div id={anchor} className='mb-10 flex w-full items-center gap-4'>
+            {prefix && <span className='font-mono text-[18px] font-bold text-primary'>{prefix.replace('.', '')}</span>}
+            <h2 className='whitespace-nowrap font-display text-[28px] font-bold text-[#f4f4f2] md:text-[32px]'>{title}</h2>
+            <span className='h-px flex-1 bg-primary opacity-50' />
         </div>
     );
 }

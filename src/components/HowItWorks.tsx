@@ -4,7 +4,7 @@ const steps = [
     {
         number: '01',
         title: 'Tell me the problem',
-        body: "Email me and describe what you're trying to build or fix — plain language, no jargon needed.",
+        body: "Email me and describe what you're trying to build or fix. Plain language, no jargon needed.",
     },
     {
         number: '02',
@@ -13,21 +13,21 @@ const steps = [
     },
     {
         number: '03',
-        title: 'We build and ship — fast',
-        body: 'AI-augmented development means production-quality software delivered in days, not months. You stay in the loop the whole way — no black box.',
+        title: 'We build and ship fast',
+        body: 'AI-augmented development means production-quality software delivered in days, not months. You stay in the loop the whole way, no black box.',
     },
 ];
 
 export default function HowItWorks() {
     return (
-        <section className='px-6 md:px-12 flex flex-col items-center max-w-screen-xl mx-auto py-24'>
+        <section className='relative z-10 mx-auto max-w-[1120px] px-6 pt-24 md:px-16'>
             <SectionHeader prefix='02.' title='How I Work' anchor='process' />
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-12 w-full'>
+            <div className='grid w-full grid-cols-1 gap-10 md:grid-cols-3'>
                 {steps.map(step => (
-                    <div key={step.number} className='flex flex-col gap-3'>
-                        <span className='text-5xl font-bold text-primary opacity-40'>{step.number}</span>
-                        <h3 className='text-xl font-bold text-primary-text dark:text-dark-primary-text'>{step.title}</h3>
-                        <p className='text-secondary-text dark:text-dark-secondary-text leading-relaxed'>{step.body}</p>
+                    <div key={step.number}>
+                        <p className='mb-2 font-display text-[44px] font-extrabold leading-none text-primary'>{step.number}</p>
+                        <h3 className='mb-2 font-display text-[19px] font-bold text-[#f4f4f2]'>{step.title}</h3>
+                        <p className='text-[15px] leading-[1.6] text-[#a8a6a1]'>{step.body}</p>
                     </div>
                 ))}
             </div>

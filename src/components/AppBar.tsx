@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import ThemeToggler from '@/components/ThemeToggler';
+import { BsMoonStars } from 'react-icons/bs';
 import { useEffect, useState } from 'react';
 import NavDrawer from '@/components/NavDrawer';
 
@@ -61,8 +61,9 @@ export default function AppBar({ navItems, socials }: AppBarProps) {
 
     return (
         <div className={`fixed flex justify-between px-6 py-8 items-center w-full -delay-100 duration-500 transition-all z-50 ${conditionalStyles}`}>
-            <Link href='/' className='flex items-center gap-2'>
-                <Image src='/logo.svg' alt='My logo' width={40} height={50} />
+            <Link href='/' className='flex items-center gap-2.5'>
+                <Image src='/logo.svg' alt='My logo' width={40} height={40} className='h-10 w-auto' />
+                <span className='font-mono text-[14px] italic text-primary'>V3</span>
             </Link>
 
             <div className='md:hidden' onClick={() => setNavDrawerOpen(true)}>
@@ -70,16 +71,17 @@ export default function AppBar({ navItems, socials }: AppBarProps) {
                 <NavDrawer open={navDrawerOpen} navItems={navItems} socials={socials} toggleNavDrawer={toggleNavDrawer} />
             </div>
 
-            <div className='hidden md:flex gap-4 items-center'>
+            <div className='hidden md:flex gap-[30px] items-center text-[15px]'>
                 {navItems.map((navItem: NavItem, ind: number) => (
-                    <Link href={navItem.url} key={navItem.label} className='text-primary-text dark:text-dark-primary-text group'>
-                        <div className='group-hover:animate-bounce group-hover:text-secondary-text ease-in-out transition transform'>
-                            <span className='text-primary font-bold'>{`00${ind}`.slice(-2)}.&nbsp;</span>
-                            <span>{navItem.label}</span>
-                        </div>
+                    <Link href={navItem.url} key={navItem.label} className='text-[#e5e7eb] hover:text-[#e5e7eb] group'>
+                        <span className='font-mono text-[13px] font-bold text-primary'>{`00${ind}`.slice(-2)}.&nbsp;</span>
+                        <span className='group-hover:text-primary transition-colors'>{navItem.label}</span>
                     </Link>
                 ))}
-                <ThemeToggler />
+                <span className='h-5 w-px bg-[#3d3a35]' />
+                <span className='inline-flex h-[34px] w-[34px] items-center justify-center rounded-full border border-[#3d3a35] text-primary'>
+                    <BsMoonStars size={15} />
+                </span>
             </div>
         </div>
     );
